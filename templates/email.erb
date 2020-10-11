@@ -1,0 +1,67 @@
+<div>
+  <p>Apartment Updates for Today</p>
+</div>
+
+<div class="container">
+  <div>
+    <p>These are (apartment building name) apartment listings for today.</p>
+  </div>
+  <div>
+    <% if new_apartments.length > 0 %>
+      <h2>New Apartments</h2>
+      <% new_apartments.each do |apartment| %>
+        <h3><%= apartment[:unit_number] %></h3>
+        <ul>
+          <li><%= apartment[:price] %></li>
+          <li><%= apartment[:availability] %></li>
+        </ul>
+      <% end %>
+    <% else %>
+      <h2>No New Apartments</h2>
+    <% end %>
+
+    <% if price_changes.length > 0 %>
+      <h2>Price Changes</h2>
+      <% price_changes.each do |apartment| %>
+        <h3><%= apartment[:unit_number] %></h3>
+        <ul>
+          <li><%= apartment[:price] %></li>
+          <li><%= apartment[:availability] %></li>
+        </ul>
+      <% end %>
+    <% end %>
+
+    <% if availability_changes.length > 0 %>
+      <h2>Availability Changes</h2>
+      <% availability_changes.each do |apartment| %>
+        <h3><%= apartment[:unit_number] %></h3>
+        <ul>
+          <li><%= apartment[:price] %></li>
+          <li><%= apartment[:availability] %></li>
+        </ul>
+      <% end %>
+    <% end %>
+
+    <% if removed_apartments.length > 0 %>
+      <h2>Removed Apartments</h2>
+      <% removed_apartments.each do |apartment| %>
+        <h3><%= apartment[:unit_number] %></h3>
+        <ul>
+          <li><%= apartment[:price] %></li>
+          <li><%= apartment[:availability] %></li>
+        </ul>
+      <% end %>
+    <% end %>
+
+    <% if no_changes.length > 0 %>
+      <h2>No Updates On These</h2>
+      <% no_changes.each do |apartment| %>
+        <h3><%= apartment[:unit_number] %></h3>
+        <ul>
+          <li><%= apartment[:price] %></li>
+          <li><%= apartment[:availability] %></li>
+        </ul>
+      <% end %>
+    <% end %>
+  </div>
+</div>
